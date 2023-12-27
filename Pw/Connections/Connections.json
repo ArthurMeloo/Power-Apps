@@ -1,0 +1,56 @@
+{
+  "63823de8-d7b8-490e-9ffa-bad72586c29b": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write",
+      "providers/PowerPlatform.Governance/Operations/Delete"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Excel Online (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1658/1.0.1658.3452/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "me,b%2521Bws3LZBY5EOtWYZClLq8BX5r_TPulFxIvp40avsAqWCLk3xRGo0bS6vNCkdDHTTK,01TSZZKSUBLIGFFUJPYZGY3KO6XZ4QLMHM": {
+        "dataSources": {
+          "ESTOQUE": {
+            "tableName": "{200C1DC1-2A03-4F00-B2C9-0527FFAAF5B3}"
+          },
+          "mes": {
+            "tableName": "{ABD61259-84BF-4B7F-AFF3-16A727B1341A}"
+          },
+          "MOVIMENTAÇÃO": {
+            "tableName": "{F642A45C-EC2D-4858-818D-54EB21535782}"
+          },
+          "semana_2": {
+            "tableName": "{53592AFF-CAC2-4251-A617-CC189954259D}"
+          },
+          "semana_3": {
+            "tableName": "{3705CAD0-71F8-4830-B3FE-3F1EFB77B218}"
+          },
+          "semana_4": {
+            "tableName": "{4891CC03-B0F2-4515-B104-3F001B15F7C4}"
+          },
+          "unidades": {
+            "tableName": "{5DE45702-A5B1-4340-AFE1-09F0DA340522}"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "MOVIMENTAÇÃO",
+      "ESTOQUE",
+      "unidades",
+      "semana_2",
+      "semana_3",
+      "semana_4",
+      "mes"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "63823de8-d7b8-490e-9ffa-bad72586c29b"
+  }
+}

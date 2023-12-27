@@ -1,0 +1,416 @@
+"'Semana 4' As screen":
+
+    Rectangle7_3 As rectangle:
+        BorderColor: =RGBA(39, 113, 194, 1)
+        Fill: =RGBA(39, 113, 194, 1)
+        Width: =1366
+        ZIndex: =1
+
+    "galeria_semana4 As gallery.'BrowseLayout_Vertical_ThreeTextOneImageVariant_ver5.0'":
+        BorderColor: =RGBA(39, 113, 194, 1)
+        DelayItemLoading: =true
+        Height: =668
+        Items: =Search([@semana_4], TextInput2_4.Text, "Origem-Rebate-Destino")
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =116
+        Width: =820
+        X: =544
+        Y: =100
+        ZIndex: =1
+
+        Image4 As image:
+            Height: =84
+            Image: ='caixa 1'
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =84
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title3 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Origem-Rebate-Destino: " & ThisItem.'Origem-Rebate-Destino'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 185
+            X: =115
+            Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle3.Size*1.8 + 2 + Body3.Size*1.8)) / 2
+            ZIndex: =2
+
+        Subtitle3 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Código do Patrimônio: " & ThisItem.'Código do Patrimônio'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title3.Width
+            X: =Title3.X
+            Y: =Title3.Y + Title3.Height
+            ZIndex: =3
+
+        Body3 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Retirado: " & ThisItem.Retirado
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Subtitle3.Width
+            X: =Title3.X
+            Y: =Subtitle3.Y + Subtitle3.Height
+            ZIndex: =4
+
+        NextArrow3 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.Add
+            OnSelect: |-
+                =UpdateContext({VAR_VISIVEL: true})
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="Exibir detalhes do item"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =5
+
+        Separator3 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =6
+
+        Rectangle5 As rectangle:
+            BorderColor: =RGBA(39, 113, 194, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Height: =Parent.TemplateHeight - Separator3.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =7
+
+        Icon7_2 As icon.Edit:
+            Color: =RGBA(39, 113, 194, 1)
+            Height: =33
+            Icon: =Icon.Edit
+            OnSelect: =EditForm(Form1);Navigate(CADASTRO_3)
+            Width: =40
+            X: =605
+            Y: =37
+            ZIndex: =8
+
+        Icon8_2 As icon.Trash:
+            Color: =RGBA(39, 113, 194, 1)
+            Height: =37
+            Icon: =Icon.Trash
+            OnSelect: =Remove(MOVIMENTAÇÃO, galeria_semana4.Selected)
+            Width: =37
+            X: =680
+            Y: =35
+            ZIndex: =9
+
+    Label18_4 As label:
+        Color: =RGBA(39, 113, 194, 1)
+        Font: =Font.'Lato Black'
+        Height: =42
+        Italic: =true
+        Text: |-
+            ="Clique no filtro e selecione a unidade destino:"
+        Width: =263
+        X: =9
+        Y: =160
+        ZIndex: =3
+
+    TextInput2_4 As text:
+        Color: =RGBA(39, 113, 194, 1)
+        Default: =
+        Height: =39
+        HintText: ="Digite a unidade 🔍"
+        Width: =248
+        X: =232
+        Y: =163
+        ZIndex: =4
+
+    Label15_4 As label:
+        Color: =RGBA(39, 113, 194, 1)
+        Font: =Font.'Lato Black'
+        Height: =29
+        Text: |-
+            ="CADASTRAR NOVO ITEM:"
+        Width: =223
+        X: =9
+        Y: =115
+        ZIndex: =5
+
+    Button2_4 As button:
+        Fill: =RGBA(39, 113, 194, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        OnSelect: =Navigate(CADASTRO_3)
+        Text: ="CADASTRAR"
+        X: =232
+        Y: =112
+        ZIndex: =6
+
+    Container2_3 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Bold
+        Fill: =RGBA(39, 113, 194, 1)
+        Height: =530
+        Width: =531
+        X: =9
+        Y: =216
+        ZIndex: =7
+
+        Label1_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =25
+            Text: =galeria_semana4.Selected.'Origem-Rebate-Destino'
+            Width: =191
+            X: =16
+            Y: =90
+            ZIndex: =1
+
+        Label2_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =27
+            Text: =galeria_semana4.Selected.'Código do Patrimônio'
+            Width: =140
+            X: =16
+            Y: =176
+            ZIndex: =2
+
+        Label3_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =27
+            Text: =galeria_semana4.Selected.'Descrição do Patrimônio'
+            Width: =140
+            X: =16
+            Y: =255
+            ZIndex: =3
+
+        Label4_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =27
+            Text: =galeria_semana4.Selected.Quantidade
+            Width: =140
+            X: =16
+            Y: =335
+            ZIndex: =4
+
+        Label5_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =27
+            Text: =galeria_semana4.Selected.' N. Movimentação'
+            Width: =140
+            X: =16
+            Y: =416
+            ZIndex: =5
+
+        Label6_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =27
+            Text: =galeria_semana4.Selected.Retirado
+            Width: =140
+            X: =16
+            Y: =491
+            ZIndex: =6
+
+        Label7_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Lato Black'
+            Height: =27
+            Size: =15
+            Text: |-
+                ="Origem-Rebate-Destino:"
+            Width: =244
+            X: =16
+            Y: =64
+            ZIndex: =7
+
+        Label8_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Lato Black'
+            Height: =29
+            Size: =15
+            Text: |-
+                ="Código do Patrimônio:"
+            Width: =229
+            X: =16
+            Y: =147
+            ZIndex: =8
+
+        Label9_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Lato Black'
+            Height: =29
+            Size: =15
+            Text: |-
+                ="Descrição do Patrimônio:"
+            Width: =244
+            X: =16
+            Y: =231
+            ZIndex: =9
+
+        Label10_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Lato Black'
+            Height: =30
+            Size: =15
+            Text: |-
+                ="Quantidade:"
+            Width: =172
+            X: =16
+            Y: =310
+            ZIndex: =10
+
+        Label11_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Lato Black'
+            Height: =33
+            Size: =15
+            Text: |-
+                =" N. Movimentação:"
+            Width: =212
+            X: =16
+            Y: =383
+            ZIndex: =11
+
+        Label12_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Lato Black'
+            Height: =27
+            Size: =15
+            Text: |-
+                ="Retirado:"
+            Width: =140
+            X: =16
+            Y: =464
+            ZIndex: =12
+
+        Label13_4 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Lato Black'
+            Height: =68
+            Italic: =true
+            Size: =25
+            Text: |-
+                ="INFORMAÇÕES DE ENVIO:"
+            Width: =531
+            ZIndex: =13
+
+    Label19_8 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Lato Black'
+        Height: =17
+        Text: =User().FullName
+        Width: =296
+        X: =1038
+        Y: =33
+        ZIndex: =8
+
+    Label19_9 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =17
+        Size: =10
+        Text: =User().Email
+        Width: =296
+        X: =1070
+        Y: =50
+        ZIndex: =9
+
+    Image2_4 As image:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =5
+        Height: =64
+        Image: =User().Image
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: =30
+        RadiusTopRight: =30
+        Width: =59
+        X: =1293
+        Y: =18
+        ZIndex: =10
+
+    Icon3_3 As icon.ChevronLeft:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =41
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(inicio)
+        Width: =34
+        X: =29
+        Y: =29
+        ZIndex: =11
+
+    Label14_4 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Lato Black'
+        Height: =70
+        Italic: =true
+        Size: =35
+        Text: ="SEMANA 4"
+        Width: =928
+        X: =219
+        Y: =15
+        ZIndex: =12
+
+    Label24_8 As label:
+        Color: =RGBA(202, 202, 202, 1)
+        Height: =20
+        Size: =9
+        Text: ="Criado por arthur.pereira@autoglass.com.br"
+        Width: =270
+        X: =548
+        Y: =746
+        ZIndex: =13
+
+    Label1_7 As label:
+        Color: =RGBA(39, 113, 194, 1)
+        Font: =Font.'Lato Black'
+        Height: =29
+        Size: =20
+        Text: =CountRows(semana_4)
+        Width: =25
+        X: =495
+        Y: =118
+        ZIndex: =14
+
+    Label18_8 As label:
+        Color: =RGBA(39, 113, 194, 1)
+        Font: =Font.'Lato Black'
+        Height: =32
+        Italic: =true
+        Size: =10
+        Text: |-
+            ="Total de itens cadastrados:"
+        Width: =93
+        X: =415
+        Y: =117
+        ZIndex: =15
+
